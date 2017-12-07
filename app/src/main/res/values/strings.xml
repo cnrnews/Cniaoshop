@@ -1,0 +1,28 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">菜鸟商城</string>
+    <!--BottomMenu-->
+    <string name="menu_home">主页</string>
+    <string name="menu_hot">热卖</string>
+    <string name="menu_category">分类</string>
+    <string name="menu_cart">购物车</string>
+    <string name="menu_mine">我的</string>
+    <string name="ware_list">商品列表</string>
+    <string name="share">分享</string>
+    <string name="my_orders">我的订单</string>
+    <string name="my_favorite">我的收藏</string>
+    <string name="my_info">个人资料</string>
+    <string name="my_addresses">收货地址</string>
+    <string name="my_msg">我的消息</string>
+    <string name="logout">退出登录</string>
+    <string name="to_login">点击登录</string>
+    <string name="token_error">登录失效，请重新登录</string>
+    <string name="title_activity_new_order">NewOrderActivity</string>
+    <string name="title_activity_reg">RegActivity</string>
+    <string name="create_order">填写订单</string>
+    <string name="pay_result">支付结果</string>
+    <string name="add_addresses">新建收件地址</string>
+    <string name="smssdk_resend_identify_code">重新获取验证码</string>
+    <string name="smssdk_send_mobile_detail">手机号码</string>
+    <string name="smssdk_write_identify_code">验证码</string>
+</resources>

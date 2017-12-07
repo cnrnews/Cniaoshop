@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cnaio.imooc.com.cniao5.fragment.CartFragment">
+    <cnaio.imooc.com.cniao5.widget.CNiaoToolBar
+        style="@style/toolbarStyle"
+        app:rightButton="@drawable/add"
+        app:title="@string/menu_home"
+        app:titleTextColor="@color/white" />
+    <!--banner-->
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        android:id="@+id/convenientBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/banner_height"
+        app:canLoop="true" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

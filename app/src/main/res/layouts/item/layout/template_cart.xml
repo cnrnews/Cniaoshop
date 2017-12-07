@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_list_item"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    app:cardBackgroundColor="#fff"
+    app:cardCornerRadius="4dp"
+    app:contentPadding="10dp"
+    android:padding="5dp">
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        style="@style/customCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:checked="true"
+        android:focusable="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/drawee_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:maxLines="2"
+                android:textColor="@color/gray"
+                android:textSize="16sp" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <cnaio.imooc.com.cniao5.widget.AmountView
+                    android:id="@+id/num_control"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/smallButtonHeight"
+                    app:btnWidth="@dimen/inputEditTextMinHeight" />
+
+                <TextView
+                    android:id="@+id/text_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/largePadding"
+                    android:textColor="@color/crimson"
+                    android:textSize="12sp" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

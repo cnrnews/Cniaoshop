@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cnaio.imooc.com.cniao5">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--&lt;!&ndash; 添加必要的权限 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.GET_TASKS" />-->
+    <!--<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />-->
+    <!--&lt;!&ndash;短信验证&ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.READ_CONTACTS" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_SMS" />-->
+    <!--<uses-permission android:name="android.permission.READ_SMS" />-->
+    <!--<uses-permission android:name="android.permission.GET_TASKS" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+    <application
+        android:allowBackup="true"
+        android:name=".base.BaseApplication"
+        android:icon="@drawable/icon_home"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="icon">
+        <activity android:name=".base.BaseActivity"/>
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.WareListActivity" />
+        <activity android:name=".activity.WareDetailctivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.RegActivity"/>
+        <activity android:name=".activity.RegSecondActivity"/>
+        <activity android:name=".activity.AddressListActivity"/>
+        <activity android:name=".activity.AddressAddActivity"/>
+        <activity android:name=".activity.MyOrderActivity"/>
+        <!--<activity-->
+            <!--android:name="com.mob.tools.MobUIShell"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:windowSoftInputMode="stateHidden|adjustResize"/>-->
+        <!--&lt;!&ndash; 通过AndroidManifest配置AppKey和AppSecret，如果你选择通过代码配置，则不需要配置以下meta-data &ndash;&gt;-->
+        <!--<meta-data android:name="Mob-AppKey" android:value="1d053596c7fce "/>-->
+        <!--<meta-data android:name="Mob-AppSecret" android:value="49cf6634b9d5c81be530388d8a97316a"/>-->
+    </application>
+
+</manifest>

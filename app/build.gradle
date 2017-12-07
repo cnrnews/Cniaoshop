@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //添加如下配置就OK了
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+        configurations.all {
+            resolutionStrategy.eachDependency {
+                DependencyResolveDetails details ->
+                def requested = details.requested
+                if (requested.group == 'com.android.support') {
+                    if (!requested.name.startsWith("multidex")) {
+                        details.useVersion '26.0.0'
+                    }
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/layouts/activities',
+                    'src/main/res/layouts/fragments',
+                    'src/main/res/layouts/toolbar',
+                    'src/main/res/layouts/type',
+                    'src/main/res/layouts/item',
+                    'src/main/res/layouts/view',
+                    'src/main/res/layouts',
+                    'src/main/res'
+            ]
+        }
+    }
+}
+repositories{
+    flatDir{
+        dirs 'libs' //就是你放aar的目录地址
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile rootProject.ext.dependencies["appcompat-v7"]
+    compile rootProject.ext.dependencies["cardview-v7"]
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["bottom-navigation-bar"]
+    compile rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    //轮播图
+    compile rootProject.ext.dependencies["convenientbanner"]
+    //图片加载
+    compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["base-rvadapter"]
+    compile rootProject.ext.dependencies["novate"]
+    compile rootProject.ext.dependencies["SmartRefreshLayout"]
+    compile rootProject.ext.dependencies["circleimageview"]
+    compile name:'SMSSDK-3.0.0',ext:'aar'
+    compile rootProject.ext.dependencies["jjdxm-dialogui"]
+    compile rootProject.ext.dependencies["citypickerview"]
+    compile rootProject.ext.dependencies["NineLayout"]
+
+}
